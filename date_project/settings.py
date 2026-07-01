@@ -1,3 +1,4 @@
+import os
 """
 Django settings for date_project project.
 
