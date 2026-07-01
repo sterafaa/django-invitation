@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Запрошення 💙</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#ffd6e8,#d8e9ff);
+    overflow:hidden;
+}
+
+.container{
+    background:white;
+    padding:50px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    text-align:center;
+    width:420px;
+}
+
+h1{
+    color:#ff4f81;
+    margin-bottom:30px;
+}
+
+button{
+    padding:12px 28px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#yes-button{
+    background:#4CAF50;
+    color:white;
+    margin-right:20px;
+}
+
+#yes-button:hover{
+    transform:scale(1.08);
+}
+
+#no-button{
+    background:#ff4f81;
+    color:white;
+    position:fixed;
+}
+
+#message{
+    margin-top:25px;
+    font-size:22px;
+    color:#4CAF50;
+    animation:fade .7s;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1> Підеш зі мною гуляти? </h1>
+
+<button id="yes-button" onclick="goToDate()">Так 😊</button>
+
+<button id="no-button">Ноу</button>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+
+const noButton = document.getElementById("no-button");
+
+noButton.addEventListener("mouseover",function(){
+
+const maxX = window.innerWidth - noButton.offsetWidth;
+
+const maxY = window.innerHeight - noButton.offsetHeight;
+
+const randomX = Math.random()*maxX;
+
+const randomY = Math.random()*maxY;
+
+noButton.style.left = randomX + "px";
+
+noButton.style.top = randomY + "px";
+
+});
+
+function goToDate(){
+
+document.getElementById("message").innerHTML= 
+    '🥳 <br><br>Ура! Тепер залишилось лише вибрати дату.'
+;
+
+setTimeout(function(){
+
+location.href="date.html";
+
+},2000);
+
+}
+
+</script>
+
+</body>
+</html>
