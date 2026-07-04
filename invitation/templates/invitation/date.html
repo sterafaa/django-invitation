@@ -50,7 +50,7 @@ button{
     padding:12px 25px;
     border:none;
     border-radius:10px;
-    background:#4CAF50;
+    background:#ff4f81;
     color:white;
     font-size:18px;
     cursor:pointer;
@@ -58,7 +58,8 @@ button{
 }
 
 button:hover{
-    transform:scale(1.05);
+    transform:scale(1.05)
+    background:#ff2f6d;
 }
 
 #result{
@@ -114,7 +115,7 @@ opacity:0;
 
 <h1> Обери дату, коли ми йдемо гуляти </h1>
 
-<form method="POST">
+<form method="POST" onsubmit="confirmDate(); return false;">
     {% csrf_token %}
 
     <input 
